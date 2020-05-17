@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookieSession from "cookie-session";
 import { json } from "body-parser";
 import helmet from "helmet";
+import compression from "compression";
 import TestRouter from "./routes";
 
 dotenv.config();
@@ -10,6 +11,7 @@ const app = express();
 
 app.set("trust proxy", true);
 app.use(helmet());
+app.use(compression());
 app.use(json());
 app.use(
     cookieSession({
