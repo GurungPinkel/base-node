@@ -92,7 +92,7 @@ This is a template for a node app. This template has support for:
     end_of_line = lf
     insert_final_newline = true
     indent_style = space
-    indent_size = 2
+    indent_size = 4
     trim_trailing_whitespace = true
     ```
 
