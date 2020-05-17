@@ -2,7 +2,7 @@
     "name": "base-node",
     "version": "1.0.0",
     "description": "",
-    "main": "index.ts",
+    "main": "src/index.ts",
     "scripts": {
         "build": "npm run clean && tsc ",
         "dev": "ts-node-dev --poll src/index.ts",
