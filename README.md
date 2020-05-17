@@ -12,7 +12,7 @@ This is a template for a node app. This template has support for:
 1. Install dependencies
 
     ```
-    $ npm i @types/express express @types/cookie-session cookie-session typescript body-parser helmet @types/compression compression
+    $ npm i @types/express express @types/cookie-session cookie-session typescript body-parser helmet @types/compression compression @types/debug debug
 
     $ npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier mrm lint-staged pretty-quick @types/jest @types/supertest ts-node-dev jest supertest ts-jest rimraf
 
@@ -116,7 +116,7 @@ This is a template for a node app. This template has support for:
     ```
     "scripts": {
        "build": "npm run clean && tsc ",
-       "dev": "ts-node-dev --poll src/index.ts",
+       "dev": "DEBUG=* ts-node-dev --poll src/index.ts",
        "clean": "rimraf ./dist/*",
        "test": "jest --watchAll --no-cache",
        "lint": "pretty-quick --staged && lint-staged"

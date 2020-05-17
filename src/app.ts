@@ -9,8 +9,8 @@ import TestRouter from "./routes";
 dotenv.config();
 const app = express();
 
-app.set("trust proxy", true);
 app.use(helmet());
+app.set("trust proxy", true);
 app.use(compression());
 app.use(json());
 app.use(
