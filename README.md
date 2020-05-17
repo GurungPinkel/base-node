@@ -117,7 +117,7 @@ This is a template for a node app. This template has support for:
     "scripts": {
        "build": "npm run clean && tsc ",
        "dev": "ts-node-dev --poll src/index.ts",
-       "clean": "rimraf ./target/*",
+       "clean": "rimraf ./dist/*",
        "test": "jest --watchAll --no-cache",
        "lint": "pretty-quick --staged && lint-staged"
     }
@@ -140,7 +140,7 @@ This is a template for a node app. This template has support for:
 
     ```
     "declaration": true,
-    "outDir": "./target"
+    "outDir": "./dist"
     ```
 
 6. Set up jest
