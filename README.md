@@ -12,9 +12,9 @@ This is a template for a node app. This template has support for:
 1. Install dependencies
 
     ```
-    $ npm i @types/express express @types/cookie-session cookie-session typescript body-parser helmet @types/compression compression @types/debug debug
+    $ npm i @types/express express @types/cookie-session cookie-session typescript body-parser helmet @types/compression compression debug
 
-    $ npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier mrm lint-staged pretty-quick @types/jest @types/supertest ts-node-dev jest supertest ts-jest rimraf
+    $ npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier mrm lint-staged pretty-quick @types/jest @types/supertest ts-node-dev jest supertest ts-jest rimraf @types/debug
 
     ```
 

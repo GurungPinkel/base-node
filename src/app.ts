@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieSession from "cookie-session";
-import { json } from "body-parser";
+import bodyParser, { json } from "body-parser";
 import helmet from "helmet";
 import compression from "compression";
 import TestRouter from "./routes";
@@ -12,6 +12,11 @@ const app = express();
 app.use(helmet());
 app.set("trust proxy", true);
 app.use(compression());
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
 app.use(json());
 app.use(
     cookieSession({
