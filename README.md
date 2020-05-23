@@ -158,3 +158,5 @@ This is a template for a node app. This template has support for:
     ```
 
 7. Create a empty file under src > test > setup.ts
+
+8. Setup winston, and morgan with winston for logging
