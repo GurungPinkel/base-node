@@ -1,12 +1,13 @@
-import express from "express";
+// eslint-disable-next-line no-unused-vars
+import express, { Request, Response, NextFunction } from "express";
 import cookieSession from "cookie-session";
 import bodyParser, { json } from "body-parser";
 import helmet from "helmet";
 import compression from "compression";
 import morgan from "morgan";
 import "./config/env";
-import { ErrorHandler, NotFoundError } from "@pinkelgrg/app-common";
-import { stream } from "./config/winston";
+import { NotFoundError, ErrorHandler } from "@pinkelgrg/app-common";
+import { logger, stream } from "./config/winston";
 
 import { TestRouter } from "./routes";
 
@@ -41,6 +42,10 @@ app.all("*", () => {
     throw new NotFoundError("404: Not Found");
 });
 
-app.use(ErrorHandler);
+// eslint-disable-next-line no-unused-vars
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    logger.error(err);
+    ErrorHandler(err, res);
+});
 
 export default app;
