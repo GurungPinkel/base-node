@@ -6,7 +6,7 @@ import helmet from "helmet";
 import compression from "compression";
 import morgan from "morgan";
 import { ErrorHandler, NotFoundError } from "@pinkelgrg/app-common";
-import { logger, stream } from "./config/winston";
+import { stream } from "./config/winston";
 
 import { TestRouter } from "./routes";
 
