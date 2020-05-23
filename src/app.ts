@@ -5,6 +5,7 @@ import bodyParser, { json } from "body-parser";
 import helmet from "helmet";
 import compression from "compression";
 import morgan from "morgan";
+import { ErrorHandler, NotFoundError } from "@pinkelgrg/app-common";
 import { logger, stream } from "./config/winston";
 
 import { TestRouter } from "./routes";
@@ -37,12 +38,10 @@ app.use(
 
 app.use(TestRouter);
 
-app.all("*", (req, res) => {
-    // TODO: Dont forget to changeME!
-    logger.error(
-        `404 Not Found : ${req.method} - ${req.url}  - ${JSON.stringify(req.body)}`
-    );
-    return res.redirect("/api/test");
+app.all("*", () => {
+    throw new NotFoundError("404: Not Found");
 });
+
+app.use(ErrorHandler);
 
 export default app;
