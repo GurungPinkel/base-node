@@ -13,6 +13,10 @@ const errorFormat = printf((data) => {
     return `[${data.level}]: ${data.timestamp} - ${data.stack}`;
 });
 
+const consoleFormat = printf((data) => {
+    return `[${data.level}]: ${data.timestamp} - ${data.message} - ${data.stack}`;
+});
+
 const transports = {
     app: new winston.transports.DailyRotateFile({
         filename: path.join(__dirname, "../../logs/app-%DATE%.log"),
@@ -40,7 +44,10 @@ const transports = {
         maxFiles: "14d",
         format: errorFormat
     }),
-    console: new winston.transports.Console({ level: "debug" })
+    console: new winston.transports.Console({
+        level: "debug",
+        format: consoleFormat
+    })
 };
 
 const logger = createLogger({
