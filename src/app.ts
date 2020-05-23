@@ -1,16 +1,15 @@
 import express from "express";
-import dotenv from "dotenv";
 import cookieSession from "cookie-session";
 import bodyParser, { json } from "body-parser";
 import helmet from "helmet";
 import compression from "compression";
 import morgan from "morgan";
+import "./config/env";
 import { ErrorHandler, NotFoundError } from "@pinkelgrg/app-common";
 import { stream } from "./config/winston";
 
 import { TestRouter } from "./routes";
 
-dotenv.config();
 const app = express();
 
 app.use(helmet());
