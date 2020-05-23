@@ -14,7 +14,7 @@ const errorFormat = printf((data) => {
 });
 
 const consoleFormat = printf((data) => {
-    return `[${data.level}]: ${data.timestamp} - ${data.message} - ${data.stack}`;
+    return `[${data.level}]: ${data.timestamp} : ${data.message} - ${data.stack}`;
 });
 
 const transports = {
